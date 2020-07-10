@@ -13,20 +13,20 @@ def product_corrs():
     
     # agrupamento de descricao por id
     descricao_por_id = dataset.groupby('CustomerID')['StockCode'].value_counts()
-    #gera distribuição
+    # gera distribuicao
     descricao_por_id = descricao_por_id.unstack().fillna(0)
-    #filtra os campos principais
+    # filtra os campos principais
     descricao_por_id = pd.DataFrame(data = descricao_por_id.values, columns=descricao_por_id.columns.values.tolist(), index=descricao_por_id.index)
-    #processa a correlação dos dados
+    # processa a correlacao dos dados
     corr_descricao_por_id = descricao_por_id.corr()
-    #transforma em lista a correlação processada
+    # transforma em lista a correlacao processada
     maiores_corrs = corr_descricao_por_id.unstack().sort_values(ascending=False)[:]
-    #elimina os duplicados
+    # elimina os duplicados
     maiores_corrs = maiores_corrs.drop_duplicates()
-    #elimina as correlações com baixa porcentagem
+    # elimina as correlacoes com baixa porcentagem
     maiores_corrs = maiores_corrs.where(lambda x : x.values > 0.50).dropna()
 
-    #Gerando a arvore de correlações 
+    # Gerando a arvore de correlacoes 
     df_final = pd.DataFrame()
     grupo = ""
     series = pd.Series()
