@@ -45,7 +45,7 @@ def product_corrs():
     return series.to_json()
 
 
-@app.route('/v1/status', methods=['GET'])
+@app.route('/')
 def status():
     return "status ok..."
 
