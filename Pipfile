@@ -10,4 +10,4 @@ Flask = "*"
 
 [requires]
 
-python_version = "3.7.3"
+python_version = "python-2.7.16"
