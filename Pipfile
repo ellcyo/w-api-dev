@@ -5,9 +5,9 @@ verify_ssl = true
 
 
 [packages]
-
 Flask = "*"
+pandas = "*"
+numpy = "*"
 
 [requires]
-
-python_version = "python-2.7.16"
+python_version = "python-3.7"
