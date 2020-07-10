@@ -47,7 +47,7 @@ def product_corrs():
 
 @app.route('/')
 def status():
-    return "status ok..."
+    return "...status ok..."
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
