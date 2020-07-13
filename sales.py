@@ -51,7 +51,7 @@ def status():
     return "...status ok..."
 
 @app.route('/v1/clientes')
-def status():
+def clientes():
     return "...clientes ok..."
 
 
