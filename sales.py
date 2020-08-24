@@ -6,6 +6,9 @@ import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
+#Web Scraping
+from page import Page
+
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -52,9 +55,9 @@ def product_corrs():
 def status():
     return "...status ok..."
 
-@app.route('/v1/clientes')
-def clientes():
-    return "...clientes ok..."
+@app.route('/v1/search/<site>/<chave>')
+def pages(site, chave):    
+    return Page(site, chave).get_result()
 
 
 if __name__ == "__main__":
