@@ -8,13 +8,6 @@ Flask = "*"
 pandas = "*"
 numpy = "*"
 flask_cors = "*"
-builtwith = "*"
-whois = "*"
-re = "*"
-urllib = "*"
-bs4 = "*"
-ssl = "*"
-json = "*"
 
 [requires]
 python_version = "python-3.7"
